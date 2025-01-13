@@ -31,7 +31,7 @@ ucsbece154b_fifo #(
 int i;
 logic ERROR = 0;
 initial begin
-$dumpfile("fifo_tb.fst");
+$dumpfile("dump.fst");
 $dumpvars;
 $display( "Begin simulation." );
 //\\ =========================== \\//
