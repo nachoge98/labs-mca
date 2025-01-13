@@ -5,7 +5,6 @@
 #
 
 # Modify with your paths
-# Purpose: Configure riscv64-unknown-elf-gcc, fesvr, verilator, gtkwave, pip user
 export RISCV=<REPLACE THIS WITH YOUR RISCV ROOT>
 
 # No need to modify
