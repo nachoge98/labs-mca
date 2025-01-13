@@ -31,7 +31,7 @@ All the instructions are written expecting you to use a local Linux/WSL machine,
 export NUM_JOBS=$(nproc)
 ```
 5. Follow the cva6 setup instructions from [Quick setup](./labs/guides/quick-setup-cva6.md).
-6. Download and install the [OSS CAD Suite](https://github.com/YosysHQ/oss-cad-suite-build). You can do this by un-taring the latest release to a `"./tools/oss-cad-suite"` directory.
+6. Download and install the [OSS CAD Suite](https://github.com/YosysHQ/oss-cad-suite-build). You can do this by un-taring the latest release to the `"./tools/oss-cad-suite"` directory (you will need to create the tools directory).
 7. Modify the following parts of the`./setup.sh` file: 
 
 ```bash
