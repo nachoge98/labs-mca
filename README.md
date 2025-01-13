@@ -1,5 +1,7 @@
 
-# Architecture Labs with CVA6
+# MCA Labs with CVA6
+
+This labs are an adaptation of: [labs-with-cva6](https://github.com/sifferman/labs-with-cva6)
 
 ## Labs
 
