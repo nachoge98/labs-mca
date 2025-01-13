@@ -1,6 +1,8 @@
 
 # MCA Labs with CVA6
 
+IN PROGRESS
+
 This labs are an adaptation of: [labs-with-cva6](https://github.com/sifferman/labs-with-cva6) written by Ethan Sifferman [Ethan Sifferman](https://github.com/sifferman) to the requirements of the course.
 
 ## Labs
@@ -9,8 +11,6 @@ This labs are an adaptation of: [labs-with-cva6](https://github.com/sifferman/la
 2. [Branch Prediction](./labs/branch-prediction.md)
 3. [Synthesizable SystemVerilog](./labs/sv.md)
 4. [Caching](./labs/caching.md)
-5. [Out-of-Order](./labs/ooo.md)
-6. [Virtual Memory](./labs/vm.md)
 
 ## Guides
 
