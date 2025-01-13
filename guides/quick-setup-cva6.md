@@ -17,7 +17,7 @@ git submodule update --init --recursive
 
 3. Install `cmake`, version 3.14 or higher.
 
-4. Set the RISCV environment variable.
+4. Set the RISCV environment variable to your installation directory, i.e:
 ```sh
 export RISCV=~/riscv-tools
 ```

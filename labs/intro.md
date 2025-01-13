@@ -9,15 +9,15 @@ We are assuming that you have some familiarity with Git and GitHub already. If y
 
 Next, refer to this guide as needed: [Creating a permanent link to a code snippet](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-a-permanent-link-to-a-code-snippet).
 
-1. What is a Git commit? What is the hash of the commit that first added [this file](https://github.com/sifferman/labs-with-cva6/blob/main/labs/intro.md) to this repository?
-2. Using [`"./labs/intro/git-example.txt"`](https://github.com/sifferman/labs-with-cva6/blob/main/labs/intro/git-example.txt), provide a link (URL) to the line that describes who wrote that file.
+1. What is a Git commit? What is the hash of the commit that first added [this file](./labs/intro.md) to this repository?
+2. Using [`"./labs/intro/git-example.txt"`](./labs/intro/git-example.txt), provide a link (URL) to the line that describes who wrote that file.
 3. Using that same file, open its initial commit and create a permalink to the line that describes who wrote that file.
 4. Why should you always use permalinks as opposed to regular links when sharing lines of code via GitHub?
 5. What is a Git submodule, and what are they used for? What is the hash of the cva6 submodule that this repository uses?
 
 ## SystemVerilog Questions
 
-1. Provide a link to the IEEE 1800-2017 SystemVerilog standard. (You will need the UCSB network to access <https://ieeexplore.ieee.org/Xplore/home.jsp>)
+1. Provide a link to the IEEE 1800-2017 SystemVerilog standard. (<https://ieeexplore.ieee.org/Xplore/home.jsp>)
 2. In the keyword `always_comb`, what does "comb" refer to? What is its Verilog equivalent? Provide a GitHub permalink to an instance of `always_comb` in CVA6.
 3. In the keyword `always_ff`, what does "ff" refer to? What is its Verilog equivalent? Provide a GitHub permalink to an instance of `always_ff` in CVA6.
 4. What is a SystemVerilog package, and how do you reference its contents in another file? Provide a GitHub link to `ariane_pkg.sv` and a permalink to an instance where `ariane_pkg` is imported and used in another file.
@@ -42,12 +42,14 @@ Next, refer to this guide as needed: [Creating a permanent link to a code snippe
 
 ## ELF Questions
 
-Note that you can view the instructions and PCs of an ELF file with the following command: `riscv64-unknown-elf-objdump -d <PATH TO PROGRAM>.elf`
+Note that you can view the instructions and PCs of an ELF file with the following command: `riscv-none-elf-objdump -d <PATH TO PROGRAM>.o`
+How to generate the elf file is explained in [Getting Started](../guides/getting-started.md).
 
 1. What is an ELF file and where are they used? (Not specific to CVA6)
 2. What is the difference between segments and sections?
 3. Compile [`"./programs/examples/asm.S"`](https://github.com/sifferman/labs-with-cva6/blob/main/programs/examples/asm.S), and (using your favorite hex viewer) give the offset into the ELF file at which the `add` instruction is located. Please also provide a screenshot.
 4. Write a `.S` file that contains instructions covering all 6 of the instruction formats, a branch taken condition, and a compressed instruction. Compile it to an ELF file and find all the PCs for each of the 8 occurences. Provide the `.S` file and the list of PCs.
+Note that you can add the option `-M no-aliases` to force the dump to add `c.` in front of the compressed instructions.
 
 ## Simulation Questions
 
