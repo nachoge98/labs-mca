@@ -9,9 +9,9 @@ This guide offers the method of code organization and collaboration that we reco
 
 2. Create a new *public or private*[^1] GitHub repository and clone it to your machine. You can either make a new repository for each lab, or use the same repository for all labs.
 
-3. If you made a private repository, give the instructors read-access to your repository. Their GitHub usernames are "dstrukov" and "sifferman".
+3. If you made a private repository, give the instructors read-access to your repository. Their GitHub usernames are TBD.
 
-4. Add [labs-with-cva6](https://github.com/sifferman/labs-with-cva6) as a submodule with `git submodule add git@github.com:sifferman/labs-with-cva6.git`.
+4. Add [labs-with-cva6](./..) as a submodule with `git submodule add git@github.com:sifferman/labs-with-cva6.git`.
 
 5. If you ever need to change the commit of your [labs-with-cva6](https://github.com/sifferman/labs-with-cva6) submodule, you will need to do the following:
 
