@@ -11,9 +11,9 @@ This guide offers the method of code organization and collaboration that we reco
 
 3. If you made a private repository, give the instructors read-access to your repository. Their GitHub usernames are TBD.
 
-4. Add [labs-with-cva6](./..) as a submodule with `git submodule add git@github.com:sifferman/labs-with-cva6.git`.
+4. Add [labs-mca](./..) as a submodule with `git submodule add git@github.com:sifferman/labs-with-cva6.git`.
 
-5. If you ever need to change the commit of your [labs-with-cva6](https://github.com/sifferman/labs-with-cva6) submodule, you will need to do the following:
+5. If you ever need to change the commit of your [labs-mca](./..) submodule, you will need to do the following:
 
     1. `cd labs-with-cva6`
     2. `git pull origin main` to grab the latest commit, or `git checkout <COMMIT HASH>` to grab a specific commit
