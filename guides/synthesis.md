@@ -156,7 +156,7 @@ There are several Verilog Simulators to choose from, and each have pros and cons
 
 (All good, but all expensive)
 
-* Siemens ModelSim
+* Siemens ModelSim/Questa
 * Synopsys VCS
 * Cadence NCSim
 
