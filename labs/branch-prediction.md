@@ -22,12 +22,13 @@ In this lab, you will need to modify the existing [branch predictor](https://git
 Add functionality to [frontend.sv](https://github.com/openhwgroup/cva6/blob/a12d51143217742fe42058e4dceb4baa33edf5e6/core/frontend/frontend.sv) that records the branch predictor hit-rate.
 
 To do this, you can create an `always_ff @(posedge clk)` block that counts how many times a branch has been resolved, and how many of those resolutions were mispredicts. ([Branch resolve net](https://github.com/openhwgroup/cva6/blob/a12d51143217742fe42058e4dceb4baa33edf5e6/core/frontend/frontend.sv#L46); [branch resolve type](https://github.com/openhwgroup/cva6/blob/a12d51143217742fe42058e4dceb4baa33edf5e6/core/cva6.sv#L128-L135).) The hit-rate can be calculated with 1-num_mispredicts/num_valid_resolutions. You can then record the hit-rate to a file on every clock cycle; this way, you are certain to get the final hit-rate when the simulation terminates.
+Note that the file will be created at `mca-labs/cva6/verif/sim`.
 
 ### Part 1 Questions
 
 1. Highlight your changes to `"frontend.sv"` that records the hit-rate.
 2. What are the final hit-rate percentages of each of the [bp benchmarks](./../programs/bp)?
-3. Compare the performance of the [bp benchmarks](./../programs/bp) after choosing 3 new values for [`NR_ENTRIES`](https://github.com/openhwgroup/cva6/blob/b44a696bbead23dafb068037eff00a90689d4faf/core/frontend/frontend.sv#L419). Display the 4 hit-rates in a table and explain how and why each program changes its hit-rate as BHT size changes. *Note: When changing `NR_ENTRIES`, be sure to change `NR_ENTRIES` in the `bht` instantiation in `"frontend.sv"`, not the `bht` declaration in `"bht.sv"`. Also your `NR_ENTRIES` values should be on the order of 16 to have interesting results.*
+3. Compare the performance of the [bp benchmarks](./../programs/bp) after choosing 3 new values for [`NR_ENTRIES`](https://github.com/openhwgroup/cva6/blob/a12d51143217742fe42058e4dceb4baa33edf5e6/core/frontend/frontend.sv#L499). Display the 4 hit-rates in a table and explain how and why each program changes its hit-rate as BHT size changes. *Note: When changing `NR_ENTRIES`, be sure to change `NR_ENTRIES` in the `bht` instantiation in `"frontend.sv"`, not the `bht` declaration in `"bht.sv"`. Also your `NR_ENTRIES` values should be on the order of 16 to have interesting results.*
 
 ### Example of How to Write to a File in Verilog/SystemVerilog
 

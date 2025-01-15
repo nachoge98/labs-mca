@@ -64,7 +64,7 @@ make clean_all
 #python3 cva6.py --testlist=../tests/testlist_custom.yaml --test custom_test_template --iss_yaml cva6.yaml --target cv64a6_imafdc_sv39 --iss=$DV_SIMULATORS $DV_OPTS
 
 python3 cva6.py --asm_tests $src0 --iss_yaml cva6.yaml --target cv64a6_imafdc_sv39 --iss=$DV_SIMULATORS --gcc_opts="$ASM_CC_OPTS" $DV_OPTS
-make -C ../.. clean
-make clean_all
+#make -C ../.. clean
+#make clean_all
 
 cd -

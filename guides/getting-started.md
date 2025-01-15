@@ -3,7 +3,7 @@
 
 ## About CVA6
 
-From the [cva6 README](https://github.com/openhwgroup/cva6/tree/b44a696bbead23dafb068037eff00a90689d4faf#readme):
+From the [cva6 README](https://github.com/openhwgroup/cva6/blob/cb5c623e5083656fd6bead45c6a7128e891f121a/README.md):
 
 > CVA6 is a 6-stage, single issue, in-order CPU which implements the 64-bit RISC-V instruction set. It fully implements I, M, A and C extensions as specified in Volume I: User-Level ISA V 2.3 as well as the draft privilege extension 1.10. It implements three privilege levels M, S, U to fully support a Unix-like operating system. Furthermore it is compliant to the draft external debug spec 0.13.
 
