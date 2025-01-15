@@ -61,7 +61,7 @@ You should implement your FIFO with a cyclical buffer. You should have one block
 * As long as the FIFO is not empty, `data_o` should give the data at the head of the buffer.
 * Both pushing and popping should occur on `posedge clk_i`, and reset should occur synchronously.
 
-The module you need to finish is [`"ucsbece154b_fifo.sv"`](./sv/starter/ucsbece154b_fifo.sv), found in [`"labs/sv/starter"`](./sv/starter/). You can simulate your changes with ModelSim using `make tb TOOL=modelsim` (or Verilator 5 using `make tb TOOL=verilator` assuming that you have it set up). A [sample testbench](./sv/starter/tb/fifo_tb.sv) is provided that you may edit as desired. You will also be graded on whether your design is synthesizable. You can run `make synth` to verify that it synthesizes with Yosys+Surelog correctly.
+The module you need to finish is [`"ucsbece154b_fifo.sv"`](./sv/starter/ucsbece154b_fifo.sv), found in [`"labs/sv/starter"`](./sv/starter/). You can simulate your changes with Verilator 5 using `make tb TOOL=verilator`. A [sample testbench](./sv/starter/tb/fifo_tb.sv) is provided that you may edit as desired. You will also be graded on whether your design is synthesizable. You can run `make synth` to verify that it synthesizes with Yosys+Surelog correctly.
 
 Now that you have seen a lot of CVA6's code, **you must mimic the coding practices/styles of CVA6**. This means using `_d` and `_q` nets for all your flip-flops, and using `always_comb` to set your `_d` nets, and using `always_ff` to set your `_q` nets. See ["Writing Synthesizable SystemVerilog" - Flip-Flops](../guides/synthesis.md#flip-flops).
 

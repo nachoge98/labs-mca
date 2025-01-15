@@ -1,7 +1,7 @@
 
 # Caching
 
-In this lab, you will add a victim cache to the [CVA6 I-Cache](https://github.com/openhwgroup/cva6/blob/b44a696bbead23dafb068037eff00a90689d4faf/core/cache_subsystem/cva6_icache.sv).
+In this lab, you will add a victim cache to the [CVA6 I-Cache](https://github.com/openhwgroup/cva6/blob/cb5c623e5083656fd6bead45c6a7128e891f121a/core/cache_subsystem/cva6_icache.sv).
 
 ## Pre-Lab Questions
 

@@ -54,7 +54,7 @@ A few notes on your implementation:
     * You can use Gshare or Gselect
     * You may also choose to use [XORShift](https://en.wikipedia.org/wiki/Xorshift), a simple random-number-generation algorithm, to create a hash that will index into your BHT
 * Be sure that your BHT size is decided by the parameter `NR_ENTRIES`
-* Be sure to remove all unused lines of code leftover from the initial implementation
+* Be sure to remove all unused lines of code leftover from the initial implementation, this includes the fpga targeted implementation.
 * Be sure to comment your design clearly
 
 ### Part 2 Questions
