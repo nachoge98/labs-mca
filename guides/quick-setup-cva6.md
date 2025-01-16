@@ -7,36 +7,35 @@ This guide is based on the [Quick Setup](https://github.com/openhwgroup/cva6?tab
 
 1. Initialize all submodules.
 ```sh
-cd ./cva6
+cd cva6
 git submodule update --init --recursive
 ```
+2. Prerequisites, run: `sudo apt update` before you continue with the next steps.
+```sh
+sudo apt update
+sudo apt install python3-pip
+sudo apt-get install cmake help2man device-tree-compiler autoconf automake autotools-dev curl git libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool bc zlib1g-dev
+```
 
-2. Install the GCC Toolchain [build prerequisites](https://github.com/openhwgroup/cva6/tree/master/util/toolchain-builder#prerequisites) then [the toolchain itself](https://github.com/openhwgroup/cva6/tree/master/util/toolchain-builder#getting-started).
-
-:warning: It is **strongly recommended** to use the toolchain built with the provided scripts.
-
-3. Install `cmake`, version 3.14 or higher.
-
-4. Set the RISCV environment variable to your installation directory, i.e:
+3. Make sure to have set the RISCV environment variable to your installation directory, i.e:
 ```sh
 export RISCV=~/riscv-tools
 ```
 
-5. Install `help2man` and `device-tree-compiler` packages.
-
-For Debian-based Linux distributions, run :
-
+4. Install the GCC Toolchain with the scripts included in the cva6 directory `cva6/util/toolchain-builder/`.
+Run:
 ```sh
-sudo apt-get install help2man device-tree-compiler
+cd util/toolchain-builder
+bash get-toolchain.sh
+bash build-toolchain.sh $RISCV
 ```
-
-6. Install the riscv-dv requirements:
-
+7. Go back to the cva6 main directory at `labs-mca/cva6` and install the riscv-dv requirements:
 ```sh
+cd ../..
 pip3 install -r verif/sim/dv/requirements.txt
 ```
 
-7. Run these commands to install a custom Spike and Verilator (i.e. these versions must be used to simulate the CVA6) and [these](https://github.com/openhwgroup/cva6/tree/master#running-regression-tests-simulations) tests suites.
+8. Run these commands to install a custom Spike and Verilator (i.e. these versions must be used to simulate the CVA6) and [these](https://github.com/openhwgroup/cva6/tree/master#running-regression-tests-simulations) tests suites.
 ```sh
 export DV_SIMULATORS=veri-testharness,spike
 bash verif/regress/dv-riscv-arch-test.sh

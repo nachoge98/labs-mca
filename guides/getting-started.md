@@ -23,21 +23,31 @@ All the instructions are written expecting you to use a local Linux/WSL machine,
 
 ### Local Tool Setup
 1. Clone the labs repo: `git clone TBA`.
-2. Clone the cva6 repo inside the labs directory: `cd labs-mca` and `git clone https://github.com/openhwgroup/cva6.git`.
+
+2. Clone the cva6 repo inside the [labs-mca](./../) directory:
+```sh
+cd labs-mca
+git clone https://github.com/openhwgroup/cva6.git
+```
+
 3. Set `$RISCV` to wherever you want the tools to be installed to. i.e. run `export RISCV=~/riscv-tools`
+
 4. To speedup the building of the tools it is recommended to set the number of threads to use, otherwise it defaults to 1.
 ```sh
 # Use 2/3 of all available threads
 export NUM_JOBS=$((($(nproc)/4)*3))
 ```
-5. Follow the cva6 setup instructions from [Quick setup](./guides/quick-setup-cva6.md).
-6. Download and install the [OSS CAD Suite](https://github.com/YosysHQ/oss-cad-suite-build). You can do this by running
+
+5. Follow the cva6 setup instructions from [Quick setup CVA6](./quick-setup-cva6.md).
+
+6. Download and install the [OSS CAD Suite](https://github.com/YosysHQ/oss-cad-suite-build) in the [tools](./../tools/) directory. You can do this by running
 ```sh
 cd tools
 bash install_oss_cad.sh
 ```
-or by un-taring the latest release to the `"mca-labs/tools"` directory.
-7. Modify the following parts of the`./setup.sh` file: 
+or by un-taring the latest release to the [tools](./../tools/) directory.
+
+7. Modify the following parts of the [setup.sh](./../setup.sh) file:
 
 ```bash
 # Modify with your paths
@@ -45,11 +55,11 @@ export RISCV_ROOT=<REPLACE THIS WITH YOUR RISCV ROOT>
 #
 ```
 
-8. Source the setup file from the main directory of the labs: `source ./setup.sh`.
+8. Source the setup file from the main [directory](./..) of the labs by running: `source ./setup.sh`.
 
 ## Regular Setup
 
-Before starting CVA6 simulations on a new terminal session, ensure proper environment configuration by running `source setup.sh`.
+Before starting CVA6 simulations on a new terminal session, ensure proper environment configuration by running `source setup.sh` from the main [labs-mca](./..) directory.
 
 ## Running Simulations
 

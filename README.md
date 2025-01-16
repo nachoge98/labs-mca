@@ -7,10 +7,11 @@ This labs are an adaptation of: [labs-with-cva6](https://github.com/sifferman/la
 
 ## Labs
 
-1. [Introducion to CVA6](./labs/intro.md)
-2. [Branch Prediction](./labs/branch-prediction.md)
-3. [Synthesizable SystemVerilog](./labs/sv.md)
-4. [Caching](./labs/caching.md)
+0. [Introducion to CVA6 and installation of the tools](./labs/intro.md)
+
+1. [Branch Prediction](./labs/branch-prediction.md)
+2. [Synthesizable SystemVerilog](./labs/sv.md)
+3. [Caching](./labs/caching.md)
 
 ## Guides
 
