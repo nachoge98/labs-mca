@@ -1,4 +1,4 @@
 build
 ece
-tools*
+tools/oss-cad-suite*
 *.elf
