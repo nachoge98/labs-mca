@@ -27,8 +27,8 @@ All the instructions are written expecting you to use a local Linux/WSL machine,
 3. Set `$RISCV` to wherever you want the tools to be installed to. i.e. run `export RISCV=~/riscv-tools`
 4. To speedup the building of the tools it is recommended to set the number of threads to use, otherwise it defaults to 1.
 ```sh
-# Use all available threads
-export NUM_JOBS=$(nproc)
+# Use 2/3 of all available threads
+export NUM_JOBS=$((($(nproc)/4)*3))
 ```
 5. Follow the cva6 setup instructions from [Quick setup](./guides/quick-setup-cva6.md).
 6. Download and install the [OSS CAD Suite](https://github.com/YosysHQ/oss-cad-suite-build). You can do this by un-taring the latest release to the `"./tools/oss-cad-suite"` directory (you will need to create the tools directory).

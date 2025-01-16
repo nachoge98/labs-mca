@@ -10,10 +10,11 @@ export RISCV=<REPLACE THIS WITH YOUR RISCV ROOT>
 # No need to modify
 # PATHS
 export LABS_ROOT=$(pwd)
+export NUM_JOBS=$((($(nproc)/4)*3))
 export CVA6_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/cva6" && pwd)
-export OSS_CAD_SUITE=$LABS_ROOT/oss-cad-suite
+export OSS_CAD_SUITE=$LABS_ROOT/tools/oss-cad-suite
 export VERILATOR_INSTALL_DIR="$( echo "$CVA6_ROOT/tools/verilator-"*)"
-export SPIKE_INSTALL_DIR=$CVA6_ROOT/spike
+export SPIKE_INSTALL_DIR=$CVA6_ROOT/tools/spike
 export LIBRARY_PATH=$RISCV/lib
 export LD_LIBRARY_PATH=$RISCV/lib
 export C_INCLUDE_PATH=$RISCV/include
