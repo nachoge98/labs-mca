@@ -2,3 +2,4 @@ build
 ece
 tools/oss-cad-suite*
 *.elf
+*.o

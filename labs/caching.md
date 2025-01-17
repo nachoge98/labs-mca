@@ -30,7 +30,7 @@ The implementation should be a fully-associative cache with LRU replacement poli
 
 Note that since it is a fully-associative cache, you should not infer a BRAM, but should instead infer an array of registers.
 
-The module you need to finish is [`"ucsbece154b_victim_cache.sv"`](https://github.com/sifferman/labs-with-cva6/blob/main/labs/caching/part2/starter/ucsbece154b_victim_cache.sv), found in [`"labs/caching/part2/starter"`](https://github.com/sifferman/labs-with-cva6/tree/main/labs/caching/part2/starter). Your job will be to fix all the lines labeled `// TODO`. You can simulate your changes with ModelSim using `make sim TOOL=modelsim` (or Verilator 5 using `make sim TOOL=verilator` assuming that you have it set up). A [sample testbench](https://github.com/sifferman/labs-with-cva6/blob/main/labs/caching/part2/starter/tb/victim_cache_tb.sv) is provided that you may edit as desired.
+The module you need to finish is [`"ucsbece154b_victim_cache.sv"`](./caching/part2/starter/ucsbece154b_victim_cache.sv), found in [`"labs/caching/part2/starter"`](./caching/part2/starter/). Your job will be to fix all the lines labeled `// TODO`. You can simulate your changes with Verilator 5 using `make sim TOOL=verilator`. A [sample testbench](./caching/part2/starter/tb/victim_cache_tb.sv) is provided that you may edit as desired.
 
 ## Part 2
 
@@ -38,13 +38,13 @@ In this part, you will change the CVA6 filelist to add your victim cache to the 
 
 ### Updates to I-Cache
 
-CVA6's I-Cache is implemented here: [`"cva6/core/cache_subsystem/cva6_icache.sv"`](https://github.com/openhwgroup/cva6/blob/b44a696bbead23dafb068037eff00a90689d4faf/core/cache_subsystem/cva6_icache.sv). It is highly parameterizable, allowing you to change the number of entries, the number of ways, and more. A modified version of this implementation is provided to you here, [`"ucsbece154b_icache.sv"`](https://github.com/sifferman/labs-with-cva6/blob/main/labs/caching/part2/ucsbece154b_icache.sv), which calls the victim cache that you created in the previous part.
+CVA6's I-Cache is implemented here: [`"cva6/core/cache_subsystem/cva6_icache.sv"`](https://github.com/openhwgroup/cva6/blob/b44a696bbead23dafb068037eff00a90689d4faf/core/cache_subsystem/cva6_icache.sv). It is highly parameterizable, allowing you to change the number of entries, the number of ways, and more. A modified version of this implementation is provided to you here, [`"ucsbece154b_icache.sv"`](./caching/part2/ucsbece154b_icache.sv), which calls the victim cache that you created in the previous part.
 
 Try to read through the files and answer the questions below.
 
 ### Verilog/SystemVerilog Generate
 
-The starter code for [`"ucsbece154b_victim_cache.sv"`](https://github.com/sifferman/labs-with-cva6/blob/main/labs/caching/part2/starter/ucsbece154b_victim_cache.sv) includes a [`generate` construct](https://www.chipverify.com/verilog/verilog-generate-block). A `generate` construct provides the ability for a module to be built based on parameters. These statements are used when an operation or module instance needs to be conditionally included or repeated.
+The starter code for [`"ucsbece154b_victim_cache.sv"`](./caching/part2/starter/ucsbece154b_victim_cache.sv) includes a [`generate` construct](https://www.chipverify.com/verilog/verilog-generate-block). A `generate` construct provides the ability for a module to be built based on parameters. These statements are used when an operation or module instance needs to be conditionally included or repeated.
 
 Here are some examples inside CVA6 of using `generate` blocks:
 
