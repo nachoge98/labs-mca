@@ -1,15 +1,14 @@
 
 set top ucsbece154b_victim_cache
-set name ucsbece154b_caching_victim_cache_1.0.0
 
-yosys -import
-plugin -i systemverilog
+#-noinfo -nonote
 
-yosys -import
+yosys read -sv ../../unread.sv
+yosys read -sv ../../ucsbece154b_victim_cache.sv
+yosys chparam -set PNR_ENTRIES 4 -set PADDR_WIDTH 16 -set PLINE_WIDTH 16 ucsbece154b_victim_cache
 
-read_systemverilog -noinfo -nonote {../../unread.sv}
-read_systemverilog -PNR_ENTRIES=4 -PADDR_WIDTH=16 -PLINE_WIDTH=16 -noinfo -nonote {../../ucsbece154b_victim_cache.sv}
+yosys synth_ice40 -top $top
+yosys opt
+yosys write_json synth.json
 
-synth_ice40 -top $top
-opt
-write_json synth.json
+#yosys write_verilog -sv synth_fifo.sv
