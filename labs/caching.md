@@ -1,7 +1,7 @@
 
 # Caching
 
-In this lab, you will add a victim cache to the [CVA6 I-Cache](https://github.com/openhwgroup/cva6/blob/cb5c623e5083656fd6bead45c6a7128e891f121a/core/cache_subsystem/cva6_icache.sv).
+In this lab, you will add a victim cache to the [CVA6 I-Cache](https://github.com/openhwgroup/cva6/blob/3d2ff00b1c958bbccab9189a00cbebeda84e067b/core/cache_subsystem/cva6_icache.sv).
 
 ## Pre-Lab Questions
 
@@ -30,7 +30,7 @@ The implementation should be a fully-associative cache with LRU replacement poli
 
 Note that since it is a fully-associative cache, you should not infer a BRAM, but should instead infer an array of registers.
 
-The module you need to finish is [`"ucsbece154b_victim_cache.sv"`](./caching/part2/starter/ucsbece154b_victim_cache.sv), found in [`"labs/caching/part2/starter"`](./caching/part2/starter/). Your job will be to fix all the lines labeled `// TODO`. You can simulate your changes with Verilator 5 using `make sim TOOL=verilator`. A [sample testbench](./caching/part2/starter/tb/victim_cache_tb.sv) is provided that you may edit as desired.
+The module you need to finish is [`"ucsbece154b_victim_cache.sv"`](./caching/part2/starter/ucsbece154b_victim_cache.sv), found in [`"labs/caching/part2/starter"`](./caching/part2/starter/). Your job will be to fix all the lines labeled `// TODO`. You can simulate your changes with Verilator 5 using `make sim TOOL=verilator` from the [`"labs/caching/part2/starter"`](./caching/part2/starter/) directory. A [sample testbench](./caching/part2/starter/tb/victim_cache_tb.sv) is provided that you may edit as desired.
 
 ## Part 2
 
@@ -38,7 +38,7 @@ In this part, you will change the CVA6 filelist to add your victim cache to the 
 
 ### Updates to I-Cache
 
-CVA6's I-Cache is implemented here: [`"cva6/core/cache_subsystem/cva6_icache.sv"`](https://github.com/openhwgroup/cva6/blob/b44a696bbead23dafb068037eff00a90689d4faf/core/cache_subsystem/cva6_icache.sv). It is highly parameterizable, allowing you to change the number of entries, the number of ways, and more. A modified version of this implementation is provided to you here, [`"ucsbece154b_icache.sv"`](./caching/part2/ucsbece154b_icache.sv), which calls the victim cache that you created in the previous part.
+CVA6's I-Cache is implemented here: [`"cva6/core/cache_subsystem/cva6_icache.sv"`](https://github.com/openhwgroup/cva6/blob/3d2ff00b1c958bbccab9189a00cbebeda84e067b/core/cache_subsystem/cva6_icache.sv). It is highly parameterizable, allowing you to change the number of entries, the number of ways, and more. A modified version of this implementation is provided to you here, [`"ucsbece154b_icache.sv"`](./caching/part2/ucsbece154b_icache.sv), which calls the victim cache that you created in the previous part.
 
 Try to read through the files and answer the questions below.
 
@@ -48,14 +48,14 @@ The starter code for [`"ucsbece154b_victim_cache.sv"`](./caching/part2/starter/u
 
 Here are some examples inside CVA6 of using `generate` blocks:
 
-* [`generate for` example](https://github.com/openhwgroup/cva6/blob/b44a696bbead23dafb068037eff00a90689d4faf/core/alu.sv#L42-L50)
-* [`generate if` example](https://github.com/openhwgroup/cva6/blob/b44a696bbead23dafb068037eff00a90689d4faf/core/cva6.sv#L328-L338)
+* [`generate for` example](https://github.com/openhwgroup/cva6/blob/3d2ff00b1c958bbccab9189a00cbebeda84e067b/core/alu.sv#L60)
+* [`generate if` example](https://github.com/openhwgroup/cva6/blob/3d2ff00b1c958bbccab9189a00cbebeda84e067b/core/cva6.sv#L1456C3-L1456C57)
 
 ### Option `-f <file>`
 
-(Nearly) all Verilog/SystemVerilog tools have the command-line option `-f <file>` which reads the specified file as additional command line arguments. ([Verilator `-f` documentation](https://veripool.org/guide/latest/exe_verilator.html#cmdoption-0)). This is extremely useful and common for providing a list of RTL files, because any files specified will be treated as source files to be compiled. CVA6's [Makefile](https://github.com/openhwgroup/cva6/blob/b44a696bbead23dafb068037eff00a90689d4faf/Makefile#L542) calls `-f` on [`"cva6/core/Flist.cva6"`](https://github.com/openhwgroup/cva6/blob/b44a696bbead23dafb068037eff00a90689d4faf/core/Flist.cva6).
+(Nearly) all Verilog/SystemVerilog tools have the command-line option `-f <file>` which reads the specified file as additional command line arguments. ([Verilator `-f` documentation](https://veripool.org/guide/latest/exe_verilator.html#cmdoption-0)). This is extremely useful and common for providing a list of RTL files, because any files specified will be treated as source files to be compiled. CVA6's [Makefile](https://github.com/openhwgroup/cva6/blob/3d2ff00b1c958bbccab9189a00cbebeda84e067b/Makefile#L644) calls `-f` on [`"cva6/core/Flist.cva6"`](https://github.com/openhwgroup/cva6/blob/3d2ff00b1c958bbccab9189a00cbebeda84e067b/core/Flist.cva6).
 
-Modify [`"cva6/core/Flist.cva6"`](https://github.com/openhwgroup/cva6/blob/b44a696bbead23dafb068037eff00a90689d4faf/core/Flist.cva6) by removing the file [`"cva6/cache_subsystem/cva6_icache.sv"`](https://github.com/openhwgroup/cva6/blob/b44a696bbead23dafb068037eff00a90689d4faf/core/cache_subsystem/cva6_icache.sv), and adding the files [`"ucsbece154b_icache.sv"`](https://github.com/sifferman/labs-with-cva6/blob/main/labs/caching/part2/ucsbece154b_icache.sv) and [`"ucsbece154b_victim_cache.sv"`](https://github.com/sifferman/labs-with-cva6/blob/main/labs/caching/part2/starter/ucsbece154b_victim_cache.sv). (Be sure that you get the paths correct; feel free to move files as needed.)
+Modify [`"cva6/core/Flist.cva6"`](https://github.com/openhwgroup/cva6/blob/3d2ff00b1c958bbccab9189a00cbebeda84e067b/core/Flist.cva6) by removing the file [`"cva6/cache_subsystem/cva6_icache.sv"`](https://github.com/openhwgroup/cva6/blob/3d2ff00b1c958bbccab9189a00cbebeda84e067b/core/cache_subsystem/cva6_icache.sv), and adding the files [`"ucsbece154b_icache.sv"`](./caching/part2/ucsbece154b_icache.sv) and [`"ucsbece154b_victim_cache.sv"`](./caching/part2/starter/ucsbece154b_victim_cache.sv). (Be sure that you get the paths correct; feel free to move files as needed.)
 
 ### Simulating the Victim Cache
 
@@ -82,15 +82,15 @@ Additional resource: [RISC-V Instruction Encoder/Decoder](https://luplab.gitlab.
 
 ### Part 2 Questions
 
-1. Using the original CVA6 icache, [`"cva6/cache_subsystem/cva6_icache.sv"`](https://github.com/openhwgroup/cva6/blob/b44a696bbead23dafb068037eff00a90689d4faf/core/cache_subsystem/cva6_icache.sv), answer the following questions:
+1. Using the original CVA6 icache, [`"cva6/cache_subsystem/cva6_icache.sv"`](https://github.com/openhwgroup/cva6/blob/3d2ff00b1c958bbccab9189a00cbebeda84e067b/core/cache_subsystem/cva6_icache.sv), answer the following questions:
     1. How is the table index calculated?
     2. How is the tag calculated?
     3. Provide a permalink to the logic that causes the core to stall, assuming a miss has occurred and the main memory request hasn't been fulfilled yet. (In `"frontend.sv"`.)
-2. Using the modified icache, [`"ucsbece154b_icache.sv"`](https://github.com/sifferman/labs-with-cva6/blob/main/labs/caching/part2/ucsbece154b_icache.sv), answer the following questions:
+2. Using the modified icache, [`"ucsbece154b_icache.sv"`](./caching/part2/ucsbece154b_icache.sv), answer the following questions:
     1. When is the victim cache written to?
     2. What occurs in the `VICTIM_HIT` state?
     3. What occurs in the `VICTIM_MISS` state?
-3. Show the changes you made to [`"cva6/core/Flist.cva6"`](https://github.com/openhwgroup/cva6/blob/b44a696bbead23dafb068037eff00a90689d4faf/core/Flist.cva6).
+3. Show the changes you made to [`"cva6/core/Flist.cva6"`](https://github.com/openhwgroup/cva6/blob/3d2ff00b1c958bbccab9189a00cbebeda84e067b/core/Flist.cva6).
 4. Provide a program that demonstrates the following behaviors of the I$ and victim cache, and provide waveform screenshots of each event.
     1. An I$ miss.
     2. An I$ hit. What value+tag was read?
