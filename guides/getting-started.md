@@ -9,14 +9,6 @@ From the [cva6 README](https://github.com/openhwgroup/cva6/blob/cb5c623e5083656f
 
 CVA6 is an open-source CPU core, widely used in academia and industry. It is primarily written by [Florian Zaruba](https://github.com/zarubaf), which makes its code style and organization very consistent.
 
-## About "Labs with CVA6"
-
-This repository includes several labs aimed at teaching advanced architecture techniques. To use this repository, you will need to:
-
-1. Ensure you are on a Linux/WSL2 machine.
-2. [Create an ssh key for GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux) and [add it to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=linux).
-3. Follow the [GitHub setup guide](./your-own-repo.md)
-
 ## Tool Setup
 
 All the instructions are written expecting you to use a local Linux/WSL machine, you will need to install everything yourself.
