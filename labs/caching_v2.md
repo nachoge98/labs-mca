@@ -101,4 +101,4 @@ Additional resource: [RISC-V Instruction Encoder/Decoder](https://luplab.gitlab.
     3. A write to the victim cache. What value+tag was written?
     4. A victim cache hit. What value+tag was read?
 
-**Show the answers to these questions to the TA to sign off the Part 2.**
+**Show the answers to these questions to the TA to sign off Part 2.**
